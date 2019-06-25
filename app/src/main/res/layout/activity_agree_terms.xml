@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AgreeTerms"
+    android:background="@color/oasis_cab">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/oasis_logo_white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <ScrollView
+        android:id="@+id/terms_and_conditions_box"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/term_and_conditions_box"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <TextView
+                android:id="@+id/terms_and_conditions_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/terms_and_conditions_title_string"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/terms_and_conditions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="@string/terms_and_conditions_string"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:maxLines="7"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+    <CheckBox
+        android:id="@+id/progress_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/i_agree_string"
+        android:layout_below="@id/terms_and_conditions_box"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/sign_up_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up_string"
+        android:textColor="@color/white"
+        android:background="@drawable/button_oasis_orange"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="60dp"/>
+
+</RelativeLayout>

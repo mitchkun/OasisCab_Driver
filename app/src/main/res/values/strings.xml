@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">OasisCab_Driver</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- navigation drawer strings-->
+    <string name="home_string">Home</string>
+    <string name="profile_string">Profile</string>
+    <string name="favourite_location_string">Favourite Location</string>
+    <string name="past_trips_strings">Past Trips</string>
+    <string name="report_issue_string">Report Issue</string>
+    <string name="settings_string">Settings</string>
+    <string name="help_and_support_string">Help &amp; Support</string>
+
+    <!-- Welcome screen strings -->
+    <string name="welcome_title_string">Welcome to OasisCab</string>
+    <string name="welcome_message_string">The socially responsible way\nto ride. Push a button and a\nfew minutes later a ride comes\nto take you to your requested\ndestination.\n\nIt\'s that simple.</string>
+
+    <!-- Sign up strings-->
+    <string name="full_name_hint_string">Full name</string>
+    <string name="cellphone_number_hint_string">Cellphone number #1</string>
+    <string name="cellphone_number_2_hint_string">Cellphone number #2</string>
+    <string name="taxi_licence_hint_string">Taxi licence number</string>
+    <string name="number_plate_hint_string">Number plate</string>
+    <string name="car_model_hint_string">Car model (i.e Honda fit)</string>
+    <string name="car_make_hint_string">Car make</string>
+    <string name="number_of_seats_hint_string">Number of seats</string>
+    <string name="city_of_residence_hint_string">City of residence</string>
+    <string name="create_password_hint_string">Create password</string>
+    <string name="confirm_password_hint_string">Confirm password</string>
+    <string name="sign_up_string">Sign up</string>
+
+    <!-- Terms and conditions strings-->
+    <string name="terms_and_conditions_title_string">PLEASE READ THIS CAREFULLY</string>
+    <string name="terms_and_conditions_string">Lorem ipsum dolor sit amet, consectetuer
+        adipiscing elit, sed diam nonummy nibh
+        euismod tincidunt ut laoreet dolore magna
+        aliquam erat volutpat. Ut wisi enim ad minim
+        veniam, quis nostrud exerci tation ullamcorper
+        suscipit lobortis nisl ut aliquip ex ea commodo
+        consequat. Duis autem vel eum iriure dolor in
+        hendrerit in vulputate velit esse molestie
+        consequat, vel illum dolore eu feugiat nulla
+        facilisis at vero eros et accumsan et iusto odio
+        dignissim qui blandit praesent luptatum zzril
+        delenit augue duis dolore te feugait nulla
+        facilisi.
+        Lorem ipsum dolor sit amet, cons ectetue</string>
+    <string name="i_agree_string">I agree to the Term &amp; Conditions</string>
+
+    <!-- sign in strings-->
+    <string name="email_address_hint_string">Email Address</string>
+    <string name="password_hint_string">Password</string>
+    <string name="login_string">Login</string>
+    <string name="forgot_password_string">I forgot my password</string>
+
+    <!-- Home fragment strings-->
+    <string name="your_customers_string">Your customers</string>
+
+    <!--nav drawer strings-->
+    <string name="driver_name">Driver\'s name</string>
+
+    <!-- your customers strings-->
+    <string name="distance_away_string">km away</string>
+    <string name="pick_up_location_string">Pick up location</string>
+    <string name="drop_off_location_string">Drop off location</string>
+    <string name="accept_string">Accept</string>
+    <string name="decline_string">Decline</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_your_customers">YourCustomers</string>
+
+
+</resources>

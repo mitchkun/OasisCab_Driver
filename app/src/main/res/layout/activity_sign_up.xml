@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp"
+    android:background="@color/oasis_cab">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <FrameLayout
+            android:id="@+id/profile_pic_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/circle">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:src="@drawable/profile_picture" />
+
+            <RelativeLayout
+                android:id="@+id/camera_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:background="@drawable/oasis_circle"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/iv_camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_photo_camera"
+                    android:onClick="openImageChooser"/>
+            </RelativeLayout>
+
+
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:layout_margin="10dp"
+            android:hint="@string/full_name_hint_string"
+            android:inputType="text"
+            android:gravity="center"
+            android:layout_below="@id/profile_pic_box"
+            android:textCursorDrawable="@drawable/cursor"
+            android:drawableLeft="@drawable/ic_name"/>
+
+        <EditText
+            android:id="@+id/phone_number_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/full_name"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/black"
+            android:drawableLeft="@drawable/ic_phone_call"
+            android:gravity="center"
+            android:hint="@string/cellphone_number_hint_string"
+            android:inputType="textEmailAddress"
+            android:textCursorDrawable="@drawable/cursor" />
+
+        <EditText
+            android:id="@+id/phone_number_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phone_number_1"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/black"
+            android:drawableLeft="@drawable/ic_phone_call"
+            android:gravity="center"
+            android:hint="@string/cellphone_number_2_hint_string"
+            android:inputType="textEmailAddress"
+            android:textCursorDrawable="@drawable/cursor" />
+
+        <EditText
+            android:id="@+id/taxi_licence_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:layout_margin="10dp"
+            android:hint="@string/taxi_licence_hint_string"
+            android:inputType="number"
+            android:gravity="center"
+            android:layout_below="@id/phone_number_2"
+            android:textCursorDrawable="@drawable/cursor"/>
+
+        <EditText
+            android:id="@+id/number_plate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:layout_margin="10dp"
+            android:hint="@string/number_plate_hint_string"
+            android:inputType="text"
+            android:gravity="center"
+            android:layout_below="@id/taxi_licence_number"
+            android:textCursorDrawable="@drawable/cursor"/>
+
+        <EditText
+            android:id="@+id/car_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:layout_margin="10dp"
+            android:hint="@string/car_model_hint_string"
+            android:inputType="text"
+            android:gravity="center"
+            android:layout_below="@id/number_plate"
+            android:textCursorDrawable="@drawable/cursor"/>
+
+        <EditText
+            android:id="@+id/car_make"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:layout_margin="10dp"
+            android:hint="@string/car_make_hint_string"
+            android:inputType="text"
+            android:gravity="center"
+            android:layout_below="@id/car_model"
+            android:textCursorDrawable="@drawable/cursor"/>
+
+        <EditText
+            android:id="@+id/number_of_seats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:layout_margin="10dp"
+            android:hint="@string/number_of_seats_hint_string"
+            android:inputType="number"
+            android:gravity="center"
+            android:layout_below="@id/car_make"
+            android:textCursorDrawable="@drawable/cursor"/>
+
+        <EditText
+            android:id="@+id/city_of_residence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:layout_margin="10dp"
+            android:hint="@string/city_of_residence_hint_string"
+            android:inputType="text"
+            android:gravity="center"
+            android:layout_below="@id/number_of_seats"
+            android:textCursorDrawable="@drawable/cursor"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:layout_margin="10dp"
+            android:hint="@string/create_password_hint_string"
+            android:inputType="textPassword"
+            android:gravity="center"
+            android:layout_below="@id/city_of_residence"
+            android:textCursorDrawable="@drawable/cursor"
+            android:drawableLeft="@drawable/ic_lock"/>
+
+        <EditText
+            android:id="@+id/confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:layout_margin="10dp"
+            android:hint="@string/confirm_password_hint_string"
+            android:inputType="textPassword"
+            android:gravity="center"
+            android:layout_below="@id/password"
+            android:textCursorDrawable="@drawable/cursor"
+            android:drawableLeft="@drawable/ic_login"/>
+
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_string"
+            android:textColor="@color/oasis_cab"
+            android:background="@drawable/button"
+            android:textSize="14sp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="60dp"/>
+
+        <TextView
+            android:id="@+id/TVSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:text="Already have an account? Sign in Here"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+</ScrollView>
