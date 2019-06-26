@@ -1,9 +1,10 @@
 package com.example.oasiscab_driver;
 
 import android.content.Intent;
-import androidx.appcompat.app.*;
 import android.os.Bundle;
 import android.widget.ProgressBar;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -20,16 +21,16 @@ public class SplashScreen extends AppCompatActivity {
         setProgressValue(progress);
 
 
-        Thread thread= new Thread(){
+        Thread thread = new Thread() {
             @Override
             public void run() {
-                try{
+                try {
                     sleep(10000);
-                    Intent intent= new Intent(SplashScreen.this, WelcomeScreen.class);
+                    Intent intent = new Intent(SplashScreen.this, WelcomeScreen.class);
                     startActivity(intent);
                     finish();
 
-                }catch (InterruptedException e){
+                } catch (InterruptedException e) {
 
                 }
 

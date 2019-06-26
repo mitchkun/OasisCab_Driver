@@ -1,7 +1,8 @@
 package com.example.oasiscab_driver;
 
-import androidx.appcompat.app.*;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AgreeTerms extends AppCompatActivity {
 

@@ -7,9 +7,9 @@
         android:id="@+id/profile_pic_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:layout_margin="10dp"
         android:background="@drawable/circle"
-        android:layout_margin="10dp">
+        android:padding="5dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
@@ -22,84 +22,84 @@
         android:id="@+id/customer_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/profile_pic_box"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="@string/driver_name"
-        android:textColor="@color/black"
-        android:layout_toRightOf="@id/profile_pic_box"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"/>
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/distance_away"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/customer_name"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/profile_pic_box"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="@string/distance_away_string"
-        android:textColor="@color/black"
-        android:layout_toRightOf="@id/profile_pic_box"
-        android:layout_below="@id/customer_name"
-        android:layout_marginLeft="10dp"/>
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/pick_up_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="@string/pick_up_location_string"
-        android:textColor="@color/black"
         android:layout_below="@id/profile_pic_box"
         android:layout_marginLeft="10dp"
         android:drawableLeft="@drawable/ic_circular_shape_silhouette"
-        android:drawablePadding="10dp"/>
+        android:drawablePadding="10dp"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:text="@string/pick_up_location_string"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/drop_off_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="@string/drop_off_location_string"
-        android:textColor="@color/black"
         android:layout_below="@id/pick_up_location"
         android:layout_marginLeft="10dp"
         android:drawableLeft="@drawable/ic_circular_shape_silhouette1"
-        android:drawablePadding="10dp"/>
+        android:drawablePadding="10dp"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:text="@string/drop_off_location_string"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/accept_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_oasis"
-        android:text="@string/accept_string"
-        android:textColor="@color/black"
-        android:textSize="14sp"
         android:layout_below="@id/drop_off_location"
         android:layout_margin="10dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+        android:background="@drawable/button_oasis"
         android:paddingLeft="15dp"
-        android:paddingRight="15dp"/>
+        android:paddingTop="5dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="5dp"
+        android:text="@string/accept_string"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/decline_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/drop_off_location"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@id/accept_btn"
         android:background="@drawable/button_decline"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="5dp"
         android:text="@string/decline_string"
         android:textColor="@color/white"
-        android:layout_below="@id/drop_off_location"
-        android:layout_toRightOf="@id/accept_btn"
-        android:layout_margin="10dp"
-        android:textSize="14sp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"/>
+        android:textSize="14sp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/black"
         android:layout_below="@id/accept_btn"
-        android:layout_margin="5dp"/>
+        android:layout_margin="5dp"
+        android:background="@color/black" />
 
 </RelativeLayout>

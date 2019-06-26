@@ -8,27 +8,11 @@ public class Customer {
     private String dropOffLocation;
 
     public Customer(String customerName, String distanceAway,
-                    String pickUpLocation, String dropOffLocation){
+                    String pickUpLocation, String dropOffLocation) {
 
         this.customerName = customerName;
         this.distanceAway = distanceAway;
         this.pickUpLocation = pickUpLocation;
-        this.dropOffLocation = dropOffLocation;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public void setDistanceAway(String distanceAway) {
-        this.distanceAway = distanceAway;
-    }
-
-    public void setPickUpLocation(String pickUpLocation) {
-        this.pickUpLocation = pickUpLocation;
-    }
-
-    public void setDropOffLocation(String dropOffLocation) {
         this.dropOffLocation = dropOffLocation;
     }
 
@@ -36,15 +20,31 @@ public class Customer {
         return customerName;
     }
 
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
     public String getDistanceAway() {
         return distanceAway;
+    }
+
+    public void setDistanceAway(String distanceAway) {
+        this.distanceAway = distanceAway;
     }
 
     public String getPickUpLocation() {
         return pickUpLocation;
     }
 
+    public void setPickUpLocation(String pickUpLocation) {
+        this.pickUpLocation = pickUpLocation;
+    }
+
     public String getDropOffLocation() {
         return dropOffLocation;
+    }
+
+    public void setDropOffLocation(String dropOffLocation) {
+        this.dropOffLocation = dropOffLocation;
     }
 }

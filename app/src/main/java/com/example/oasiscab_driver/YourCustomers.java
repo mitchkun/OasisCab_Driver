@@ -1,11 +1,12 @@
 package com.example.oasiscab_driver;
 
 import android.os.Bundle;
-import androidx.appcompat.app.*;
+import android.view.MenuItem;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.Toolbar;
-import android.view.MenuItem;
 
 import java.util.ArrayList;
 
@@ -33,11 +34,11 @@ public class YourCustomers extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
-                return  true;
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -51,7 +52,7 @@ public class YourCustomers extends AppCompatActivity {
 
     }
 
-    public void addCustomers(){
+    public void addCustomers() {
 
         Customer customer = new Customer("Nelly Khumalo", "0.7 km away",
                 "New Mall, Mbabane", "Mbabane North, Zone 2");

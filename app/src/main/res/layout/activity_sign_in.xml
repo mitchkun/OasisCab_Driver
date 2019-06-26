@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignIn"
-    android:background="@color/oasis_cab">
+    android:background="@color/oasis_cab"
+    tools:context=".SignIn">
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/oasiscab_logo_head"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="50dp"
+        android:src="@drawable/oasiscab_logo_head" />
 
     <EditText
         android:id="@+id/email_address"
@@ -31,41 +30,41 @@
         android:gravity="center"
         android:hint="@string/email_address_hint_string"
         android:inputType="textEmailAddress"
-        android:textCursorDrawable="@drawable/cursor"/>
+        android:textCursorDrawable="@drawable/cursor" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
-        android:layout_margin="15dp"
         android:layout_below="@id/email_address"
-        android:hint="@string/password_hint_string"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/black"
         android:drawableLeft="@drawable/ic_lock"
-        android:inputType="textPassword"
         android:gravity="center"
-        android:textCursorDrawable="@drawable/cursor"/>
+        android:hint="@string/password_hint_string"
+        android:inputType="textPassword"
+        android:textCursorDrawable="@drawable/cursor" />
 
     <TextView
         android:id="@+id/forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/forgot_password_string"
-        android:textSize="16sp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/password"
-        android:textColor="@color/black"/>
+        android:layout_centerHorizontal="true"
+        android:text="@string/forgot_password_string"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="60dp"
+        android:background="@drawable/button"
         android:text="@string/login_string"
         android:textColor="@color/white"
-        android:background="@drawable/button"
-        android:textSize="14sp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="60dp"/>
+        android:textSize="14sp" />
 
 </RelativeLayout>

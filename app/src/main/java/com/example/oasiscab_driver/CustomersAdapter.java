@@ -1,43 +1,21 @@
 package com.example.oasiscab_driver;
 
 import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class CustomersAdapter extends RecyclerView.Adapter<CustomersAdapter.MyViewHolder>  {
+public class CustomersAdapter extends RecyclerView.Adapter<CustomersAdapter.MyViewHolder> {
 
-    private List<Customer> customers;
     Context context;
+    private List<Customer> customers;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView customerName;
-        public TextView distanceAway;
-        private TextView pickUpLocation;
-        private TextView dropOffLocation;
-        private TextView acceptButton;
-        private TextView declineButton;
-
-
-
-        public MyViewHolder(View view) {
-            super(view);
-            customerName = view.findViewById(R.id.customer_name);
-            distanceAway = view.findViewById(R.id.distance_away);
-            pickUpLocation =view.findViewById(R.id.pick_up_location);
-            dropOffLocation= view.findViewById(R.id.drop_off_location);
-            acceptButton = view.findViewById(R.id.accept_btn);
-            declineButton = view.findViewById(R.id.decline_btn);
-        }
-    }
-
-
-    public CustomersAdapter(Context context, List<Customer>  customers) {
+    public CustomersAdapter(Context context, List<Customer> customers) {
         this.customers = customers;
         this.context = context;
     }
@@ -65,5 +43,25 @@ public class CustomersAdapter extends RecyclerView.Adapter<CustomersAdapter.MyVi
     @Override
     public int getItemCount() {
         return customers.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        public TextView customerName;
+        public TextView distanceAway;
+        private TextView pickUpLocation;
+        private TextView dropOffLocation;
+        private TextView acceptButton;
+        private TextView declineButton;
+
+
+        public MyViewHolder(View view) {
+            super(view);
+            customerName = view.findViewById(R.id.customer_name);
+            distanceAway = view.findViewById(R.id.distance_away);
+            pickUpLocation = view.findViewById(R.id.pick_up_location);
+            dropOffLocation = view.findViewById(R.id.drop_off_location);
+            acceptButton = view.findViewById(R.id.accept_btn);
+            declineButton = view.findViewById(R.id.decline_btn);
+        }
     }
 }
