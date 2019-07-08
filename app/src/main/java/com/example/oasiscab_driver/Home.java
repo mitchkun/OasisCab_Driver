@@ -2,6 +2,7 @@ package com.example.oasiscab_driver;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.Service;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -98,6 +100,8 @@ public class Home extends Fragment implements GoogleMap.OnMyLocationButtonClickL
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        Intent intent = new Intent(getActivity(),MapService.class);
+        getActivity().startService(intent);
     }
 
     @Override
@@ -197,7 +201,7 @@ public class Home extends Fragment implements GoogleMap.OnMyLocationButtonClickL
 
     @Override
     public void onMyLocationClick(@NonNull android.location.Location location) {
-        Toast.makeText(getContext(), "Current location:\n" + location, Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), "Current location:\n" + "(" +location.getLatitude()+";" + location.getLongitude()+")", Toast.LENGTH_LONG).show();
     }
 
 
@@ -214,8 +218,8 @@ public class Home extends Fragment implements GoogleMap.OnMyLocationButtonClickL
     public void onConnected(@Nullable Bundle bundle) {
 
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(1000);
-        mLocationRequest.setFastestInterval(1000);
+        mLocationRequest.setInterval(8000);
+        mLocationRequest.setFastestInterval(4000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
         if (ContextCompat.checkSelfPermission(getContext(),
                 Manifest.permission.ACCESS_FINE_LOCATION)
@@ -341,4 +345,6 @@ public class Home extends Fragment implements GoogleMap.OnMyLocationButtonClickL
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
 }
