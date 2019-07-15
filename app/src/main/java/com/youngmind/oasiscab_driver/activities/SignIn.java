@@ -1,4 +1,4 @@
-package com.example.oasiscab_driver;
+package com.youngmind.oasiscab_driver.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,11 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.example.oasiscab_driver.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SignIn extends AppCompatActivity {
@@ -42,7 +40,7 @@ public class SignIn extends AppCompatActivity {
                 } else if (userEmail.isEmpty() && userPaswd.isEmpty()) {
                     Toast.makeText(SignIn.this, "Fields Empty!", Toast.LENGTH_SHORT).show();
                 } else if (!(userEmail.isEmpty() && userPaswd.isEmpty())) {
-                    firebaseAuth.signInWithEmailAndPassword(userEmail, userPaswd).addOnCompleteListener(SignIn.this, new OnCompleteListener() {
+                    /*firebaseAuth.signInWithEmailAndPassword(userEmail, userPaswd).addOnCompleteListener(SignIn.this, new OnCompleteListener() {
                         @Override
                         public void onComplete(@NonNull Task task) {
                             if (!task.isSuccessful()) {
@@ -51,7 +49,9 @@ public class SignIn extends AppCompatActivity {
                                 startActivity(new Intent(SignIn.this, MainActivity.class));
                             }
                         }
-                    });
+                    });*/
+                    // FIXME: 7/8/19 auth bypass
+                    startActivity(new Intent(SignIn.this, MainActivity.class));
                 } else {
                     Toast.makeText(SignIn.this, "Error", Toast.LENGTH_SHORT).show();
                 }

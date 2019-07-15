@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/oasis_cab"
-    tools:context=".WelcomeScreen">
+    tools:context="com.youngmind.oasiscab_driver.activities.WelcomeScreen">
 
     <ImageView
         android:id="@+id/logo"

@@ -1,4 +1,4 @@
-package com.example.oasiscab_driver;
+package com.youngmind.oasiscab_driver.activities;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,7 +14,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.oasiscab_driver.R;
 import com.google.android.material.navigation.NavigationView;
+import com.youngmind.oasiscab_driver.fragments.Home;
 
 //import androidx.legacy.app.ActionBarDrawerToggle;
 

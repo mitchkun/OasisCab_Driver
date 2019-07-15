@@ -1,8 +1,7 @@
-package com.example.oasiscab_driver;
+package com.youngmind.oasiscab_driver.fragments;
 
 import android.Manifest;
 import android.app.AlertDialog;
-import android.app.Service;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,7 +9,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.IBinder;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +22,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.oasiscab_driver.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -36,6 +36,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.youngmind.oasiscab_driver.services.MapService;
+import com.youngmind.oasiscab_driver.activities.YourCustomers;
 
 
 /**
@@ -100,7 +102,7 @@ public class Home extends Fragment implements GoogleMap.OnMyLocationButtonClickL
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        Intent intent = new Intent(getActivity(),MapService.class);
+        Intent intent = new Intent(getActivity(), MapService.class);
         getActivity().startService(intent);
     }
 
@@ -240,6 +242,8 @@ public class Home extends Fragment implements GoogleMap.OnMyLocationButtonClickL
 
     @Override
     public void onLocationChanged(android.location.Location location) {
+
+        Log.d("location", location.getLongitude() + ", " + location.getLatitude());
 
         mLastLocation = location;
         if (mCurrLocationMarker != null) {

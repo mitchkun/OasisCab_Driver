@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splash_screen_background"
-    tools:context=".SplashScreen">
+    tools:context="com.youngmind.oasiscab_driver.activities.SplashScreen">
 
     <ProgressBar
         android:id="@+id/loader_progress_bar"
