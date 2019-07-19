@@ -1,5 +1,6 @@
 package com.youngmind.oasiscab_driver.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
@@ -9,14 +10,19 @@ import android.view.View;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.oasiscab_driver.R;
+import com.youngmind.oasiscab_driver.R;
 import com.google.android.material.navigation.NavigationView;
 import com.youngmind.oasiscab_driver.fragments.Home;
+import com.youngmind.oasiscab_driver.notifications.InitialTokenPush;
+import com.youngmind.oasiscab_driver.notifications.NotificationService;
+
+import static com.youngmind.oasiscab_driver.Config.NOTIFICATION_API;
 
 //import androidx.legacy.app.ActionBarDrawerToggle;
 
@@ -66,6 +72,10 @@ public class MainActivity extends AppCompatActivity
             CURRENT_TAG = TAG_HOME;
             loadHomeFragment();
         }
+
+        //send push notification token to server as soon as the apps tarts
+        new InitialTokenPush(getApplicationContext()).pushTokenToServer(NOTIFICATION_API);
+
     }
 
     @Override

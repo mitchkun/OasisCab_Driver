@@ -1,8 +1,8 @@
-package youngmind.oasiscab.push_notifications;
+package com.youngmind.oasiscab_driver.notifications;
 
 import android.app.Notification;
-import android.support.annotation.NonNull;
 import android.util.Log;
+import androidx.annotation.NonNull;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -14,21 +14,25 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.youngmind.oasiscab_driver.R;
+import com.youngmind.oasiscab_driver.activities.RideRequest;
+import com.youngmind.oasiscab_driver.http.RQ;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import br.com.goncalves.pugnotification.notification.PugNotification;
-import elements.rogue.restcrude.RQ;
+
+import static com.youngmind.oasiscab_driver.Config.NOTIFICATION_API;
+import static java.lang.System.out;
 
 public class NotificationService extends FirebaseMessagingService {
 
-    private static final String TAG = "notifications:: ";
-    private static final String link = "http://172.17.1.11:8002/api/token/";
+    private static final String TAG = "notifications";
+    private static final String link = NOTIFICATION_API;
 
     public NotificationService() {
-        super();
-        pushToken();
+
     }
 
     @Override
@@ -38,14 +42,13 @@ public class NotificationService extends FirebaseMessagingService {
         // TODO(developer): Handle FCM messages here.
         // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
         Log.d(TAG, "From: " + remoteMessage.getFrom());
+        out.println("msg from => " + remoteMessage.getFrom());
 
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
             Log.d(TAG, "Message data payload: " + remoteMessage.getData());
 
-            if (
- Check if data needs to be processed by long running job
- true) {
+            if (/* Check if data needs to be processed by long running job */ true) {
                 // For long-running tasks (10 seconds or more) use Firebase Job Dispatcher.
 //                scheduleJob();
             } else {
@@ -66,25 +69,21 @@ public class NotificationService extends FirebaseMessagingService {
             Log.d(TAG, "Message Notification Body: " + message);
         }
 
-        // Also if you intend on generating your own notifications as a result of a received FCM
-        // message, here is where that should be initiated. See sendNotification method below.
+        //show notification on tray
         displayNotification(title, message);
     }
 
 
-*
+    /**
      * Called if InstanceID token is updated. This may occur if the security of
      * the previous token had been compromised. Note that this is called when the InstanceID token
      * is initially generated so this is where you would retrieve the token.
-
-
+     */
     @Override
     public void onNewToken(String token) {
         Log.d(TAG, "Refreshed token: " + token);
 
-        // If you want to send messages to this application instance or
-        // manage this apps subscriptions on the server side, send the
-        // Instance ID token to your app server.
+        //send token to server
         sendRegistrationToServer(token);
     }
 
@@ -102,12 +101,13 @@ public class NotificationService extends FirebaseMessagingService {
                 .bigTextStyle("bigtext")
                 .smallIcon(R.drawable.pugnotification_ic_launcher)
                 .largeIcon(R.drawable.pugnotification_ic_launcher)
+                .click(RideRequest.class)
                 .flags(Notification.DEFAULT_ALL)
                 .simple()
                 .build();
     }
 
-    public void makePostRequest(String url, final String token){
+    private void makePostRequest(String url, final String token){
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
@@ -127,7 +127,7 @@ public class NotificationService extends FirebaseMessagingService {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String>  params = new HashMap<String, String>();
-                params.put("user", "hama");
+                params.put("user_id", "hama");
                 params.put("token", token);
 
                 return params;
@@ -136,26 +136,7 @@ public class NotificationService extends FirebaseMessagingService {
         RQ.getInstance(getApplicationContext()).addToRequestQueue(postRequest);
     }
 
-    private void pushToken(){
-        FirebaseInstanceId.getInstance().getInstanceId()
-                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                        if (!task.isSuccessful()) {
-                            Log.w(TAG, "getInstanceId failed", task.getException());
-                            return;
-                        }
 
-                        // Get new Instance ID token
-                        String token = task.getResult().getToken();
-                        makePostRequest(link, token);
-
-                        // Log and toast
-                        Log.d(TAG, "initial token push success");
-//                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
-                    }
-                });
-    }
 
 
 }

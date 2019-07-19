@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.oasiscab_driver.R;
+import com.youngmind.oasiscab_driver.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SignIn extends AppCompatActivity {
@@ -52,6 +52,7 @@ public class SignIn extends AppCompatActivity {
                     });*/
                     // FIXME: 7/8/19 auth bypass
                     startActivity(new Intent(SignIn.this, MainActivity.class));
+                    finish();
                 } else {
                     Toast.makeText(SignIn.this, "Error", Toast.LENGTH_SHORT).show();
                 }

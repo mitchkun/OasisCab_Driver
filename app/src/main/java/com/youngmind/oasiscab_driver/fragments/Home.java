@@ -22,7 +22,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import com.example.oasiscab_driver.R;
+import com.youngmind.oasiscab_driver.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -142,7 +142,7 @@ public class Home extends Fragment implements GoogleMap.OnMyLocationButtonClickL
     public void onAttach(Context context) {
         super.onAttach(context);
 //        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
+//            mListener = (OnFragmentInter20.0actionListener) context;
 //        } else {
 //            throw new RuntimeException(context.toString()
 //                    + " must implement OnFragmentInteractionListener");
@@ -240,6 +240,7 @@ public class Home extends Fragment implements GoogleMap.OnMyLocationButtonClickL
 
     }
 
+    //obtain new location every x-seconds
     @Override
     public void onLocationChanged(android.location.Location location) {
 

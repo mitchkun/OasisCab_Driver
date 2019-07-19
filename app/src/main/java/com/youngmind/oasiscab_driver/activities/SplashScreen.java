@@ -6,7 +6,7 @@ import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.oasiscab_driver.R;
+import com.youngmind.oasiscab_driver.R;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -17,6 +17,7 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
 
         loaderProgressBar = findViewById(R.id.loader_progress_bar);
 

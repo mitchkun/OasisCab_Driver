@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.oasiscab_driver.R;
+import com.youngmind.oasiscab_driver.R;
 
 public class AgreeTerms extends AppCompatActivity {
 

@@ -8,7 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.oasiscab_driver.R;
+import com.youngmind.oasiscab_driver.R;
 import com.youngmind.oasiscab_driver.adapters.CustomersAdapter;
 import com.youngmind.oasiscab_driver.models.Customer;
 

@@ -24,7 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.example.oasiscab_driver.R;
+import com.youngmind.oasiscab_driver.R;
 
 public class SignUp extends AppCompatActivity {
 

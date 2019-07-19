@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.oasiscab_driver.R;
+import com.youngmind.oasiscab_driver.R;
 import com.youngmind.oasiscab_driver.models.Customer;
 
 import java.util.List;

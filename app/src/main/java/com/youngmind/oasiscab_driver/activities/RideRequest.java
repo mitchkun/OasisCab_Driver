@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.youngmind.oasiscab_driver.R;
+
 public class RideRequest extends AppCompatActivity {
 
     @Override

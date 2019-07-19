@@ -7,8 +7,11 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.oasiscab_driver.R;
+import com.youngmind.oasiscab_driver.R;
 import com.youngmind.oasiscab_driver.activities.SignIn;
+import com.youngmind.oasiscab_driver.notifications.InitialTokenPush;
+
+import static com.youngmind.oasiscab_driver.Config.NOTIFICATION_API;
 
 public class WelcomeScreen extends AppCompatActivity {
 
@@ -18,7 +21,6 @@ public class WelcomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
-
 
         nextButton = findViewById(R.id.next_button);
 

@@ -162,7 +162,7 @@ public class MapService extends Service implements GoogleMap.OnMyLocationButtonC
     public void onLocationChanged(android.location.Location location) {
 
         //log location changes
-        Log.d("locations", location.getLatitude() + ", " + location.getLongitude());
+        Log.d("locations::", location.getLatitude() + ", " + location.getLongitude());
 
         mLastLocation = location;
         if (mCurrLocationMarker != null) {
