@@ -1,23 +1,20 @@
-package com.example.oasiscab_driver;
+package com.youngmind.oasiscab_driver.services;
 
 import android.Manifest;
-import android.app.AlertDialog;
 import android.app.Service;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.util.Log;
 import android.view.View;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -33,7 +30,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.youngmind.oasiscab_driver.fragments.Home;
 
 public class MapService extends Service implements GoogleMap.OnMyLocationButtonClickListener,
         GoogleMap.OnMyLocationClickListener,
@@ -96,6 +93,8 @@ public class MapService extends Service implements GoogleMap.OnMyLocationButtonC
            LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
         }
     }
+
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -162,6 +161,9 @@ public class MapService extends Service implements GoogleMap.OnMyLocationButtonC
     @Override
     public void onLocationChanged(android.location.Location location) {
 
+        //log location changes
+        Log.d("locations", location.getLatitude() + ", " + location.getLongitude());
+
         mLastLocation = location;
         if (mCurrLocationMarker != null) {
             mCurrLocationMarker.remove();
@@ -177,7 +179,8 @@ public class MapService extends Service implements GoogleMap.OnMyLocationButtonC
 
         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 8));
-        Toast.makeText(this, "Current location:\n" + "(" +location.getLatitude()+";" + location.getLongitude()+")", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Current location:\n" +
+                "(" +location.getLatitude()+";" + location.getLongitude()+")", Toast.LENGTH_LONG).show();
     }
 
 

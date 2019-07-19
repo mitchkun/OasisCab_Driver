@@ -1,4 +1,4 @@
-package com.example.oasiscab_driver;
+package com.youngmind.oasiscab_driver.activities;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -7,6 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.oasiscab_driver.R;
+import com.youngmind.oasiscab_driver.adapters.CustomersAdapter;
+import com.youngmind.oasiscab_driver.models.Customer;
 
 import java.util.ArrayList;
 

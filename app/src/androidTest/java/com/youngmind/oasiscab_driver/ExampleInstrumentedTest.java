@@ -1,4 +1,4 @@
-package com.example.oasiscab_driver;
+package com.youngmind.oasiscab_driver;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

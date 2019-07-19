@@ -1,4 +1,4 @@
-package com.example.oasiscab_driver;
+package com.youngmind.oasiscab_driver.models;
 
 public class Customer {
 

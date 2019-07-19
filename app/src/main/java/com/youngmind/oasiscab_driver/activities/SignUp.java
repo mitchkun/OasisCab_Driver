@@ -1,4 +1,4 @@
-package com.example.oasiscab_driver;
+package com.youngmind.oasiscab_driver.activities;
 
 import android.Manifest;
 import android.app.Activity;
@@ -23,6 +23,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.example.oasiscab_driver.R;
 
 public class SignUp extends AppCompatActivity {
 

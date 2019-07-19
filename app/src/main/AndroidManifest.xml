@@ -16,19 +16,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".YourCustomers"
+            android:name="com.youngmind.oasiscab_driver.activities.YourCustomers"
             android:label="@string/title_activity_your_customers"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".SignIn"
+            android:name="com.youngmind.oasiscab_driver.activities.SignIn"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AgreeTerms" />
-        <activity android:name=".SignUp" />
+        <activity android:name="com.youngmind.oasiscab_driver.activities.AgreeTerms" />
+        <activity android:name="com.youngmind.oasiscab_driver.activities.SignUp" />
         <activity
-            android:name=".WelcomeScreen"
+            android:name="com.youngmind.oasiscab_driver.activities.WelcomeScreen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SplashScreen"
+            android:name="com.youngmind.oasiscab_driver.activities.SplashScreen"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,7 +37,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.youngmind.oasiscab_driver.activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
 
@@ -46,7 +46,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-        <service android:name=".MapService" />
+        <service android:name="com.youngmind.oasiscab_driver.services.MapService" />
     </application>
 
 </manifest>

@@ -1,10 +1,12 @@
-package com.example.oasiscab_driver;
+package com.youngmind.oasiscab_driver.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.oasiscab_driver.R;
 
 public class SplashScreen extends AppCompatActivity {
 

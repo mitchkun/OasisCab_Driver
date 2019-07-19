@@ -1,4 +1,4 @@
-package com.example.oasiscab_driver;
+package com.youngmind.oasiscab_driver.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.oasiscab_driver.R;
+import com.youngmind.oasiscab_driver.activities.SignIn;
 
 public class WelcomeScreen extends AppCompatActivity {
 
