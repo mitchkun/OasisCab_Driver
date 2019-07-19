@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "600458646116",
-    "firebase_url": "https://oasis-driver.firebaseio.com",
-    "project_id": "oasis-driver",
-    "storage_bucket": "oasis-driver.appspot.com"
+    "project_number": "110132652130",
+    "firebase_url": "https://oasisdriver-1aa60.firebaseio.com",
+    "project_id": "oasisdriver-1aa60",
+    "storage_bucket": "oasisdriver-1aa60.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:600458646116:android:bf420fa48120668b",
+        "mobilesdk_app_id": "1:110132652130:android:48329411fd6b4922",
         "android_client_info": {
-          "package_name": "com.example.oasiscab_driver"
+          "package_name": "com.youngmind.oasiscab_driver"
         }
       },
       "oauth_client": [
         {
-          "client_id": "600458646116-bsu3ch1grfrrpj8efbghaflkft5mb94j.apps.googleusercontent.com",
+          "client_id": "110132652130-242sqipigb570m1j9hsb8bsgkqktroee.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.youngmind.oasiscab_driver",
+            "certificate_hash": "4ce3db6ec59ea4a0039f2fa2d507af5c01db0780"
+          }
+        },
+        {
+          "client_id": "110132652130-lsce1gm8l1hblqabdb1et8k57sv5giej.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyALtmKASbSt8tl56ueJsxS9MAvSbiX1ETQ"
+          "current_key": "AIzaSyDpPtc1xG528Kr7iG4lXKN-GsKCYnQfrxk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "600458646116-bsu3ch1grfrrpj8efbghaflkft5mb94j.apps.googleusercontent.com",
+              "client_id": "110132652130-lsce1gm8l1hblqabdb1et8k57sv5giej.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
