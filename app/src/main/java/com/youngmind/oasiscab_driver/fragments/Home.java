@@ -22,6 +22,11 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.youngmind.oasiscab_driver.Config;
 import com.youngmind.oasiscab_driver.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -36,8 +41,14 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.youngmind.oasiscab_driver.http.RQ;
 import com.youngmind.oasiscab_driver.services.MapService;
 import com.youngmind.oasiscab_driver.activities.YourCustomers;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.youngmind.oasiscab_driver.Config.KAFKA_API_LOCATION;
 
 
 /**
@@ -244,7 +255,15 @@ public class Home extends Fragment implements GoogleMap.OnMyLocationButtonClickL
     @Override
     public void onLocationChanged(android.location.Location location) {
 
+        //log location changes!! better implementation required
         Log.d("location", location.getLongitude() + ", " + location.getLatitude());
+
+        //post driver location to server for tracking
+        Map<String, String> details = new HashMap<>();
+        details.put("user_id", Config.uniqueID);
+        details.put("lat", String.valueOf(location.getLatitude()));
+        details.put("lon", String.valueOf(location.getLongitude()));
+        postDriverLocation(KAFKA_API_LOCATION, details);
 
         mLastLocation = location;
         if (mCurrLocationMarker != null) {
@@ -351,5 +370,28 @@ public class Home extends Fragment implements GoogleMap.OnMyLocationButtonClickL
         void onFragmentInteraction(Uri uri);
     }
 
-
+    private void postDriverLocation(String url, final Map<String, String> params){
+        StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // response
+                        Log.d("Response", response);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // error
+                        Log.d("Error.Response", "error");
+                    }
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams() {
+                return params;
+            }
+        };
+        RQ.getInstance(getContext()).addToRequestQueue(postRequest);
+    }
 }

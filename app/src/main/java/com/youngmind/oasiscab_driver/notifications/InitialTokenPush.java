@@ -13,6 +13,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
+import com.youngmind.oasiscab_driver.Config;
 import com.youngmind.oasiscab_driver.http.RQ;
 
 import java.util.HashMap;
@@ -41,38 +42,48 @@ public class InitialTokenPush {
 
                         // Get new Instance ID token
                         String token = task.getResult().getToken();
-                        out.println(token);
-                        makePostRequest(url, token);
+                        //uniqueID is obtained on successful login as user_id
+                        String user_id = Config.uniqueID;
+                        try {
+                            makePostRequest(url, token, user_id);
+                            Log.d(TAG, "token ::: " + token);
+                            Log.d(TAG, "uniqueID ::: " + user_id);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                         // Log and toast
-                        Log.d(TAG, "initial token push success");
-                        Log.d(TAG, token);
 //                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                     }
                 });
     }
 
-    public void makePostRequest(String url, final String token){
+    public void makePostRequest(String url, final String token, final String user_id) throws Exception{
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         // response
                         Log.d("Response", response);
+                        Log.d(TAG, "initial token push success");
+                        Log.d(TAG, "token pushed => " + token);
+                        Log.d(TAG, "token pushed :: ID => " + user_id);
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // error
-                        Log.d("Error.Response", error.getMessage());
+//                        Log.d("Error.Response", error.getMessage());
+                        error.printStackTrace();
+                        out.println("error occurs here!!!!!!!!");
                     }
                 }
         ) {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String>  params = new HashMap<String, String>();
-                params.put("user_id", "hama");
+                params.put("user_id", user_id);
                 params.put("token", token);
 
                 return params;

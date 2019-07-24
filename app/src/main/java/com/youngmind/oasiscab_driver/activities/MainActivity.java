@@ -10,7 +10,6 @@ import android.view.View;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -20,7 +19,6 @@ import com.youngmind.oasiscab_driver.R;
 import com.google.android.material.navigation.NavigationView;
 import com.youngmind.oasiscab_driver.fragments.Home;
 import com.youngmind.oasiscab_driver.notifications.InitialTokenPush;
-import com.youngmind.oasiscab_driver.notifications.NotificationService;
 
 import static com.youngmind.oasiscab_driver.Config.NOTIFICATION_API;
 
@@ -73,7 +71,12 @@ public class MainActivity extends AppCompatActivity
             loadHomeFragment();
         }
 
-        //send push notification token to server as soon as the apps tarts
+        //start the notification service
+        /*Intent serviceIntent = new Intent();
+        serviceIntent.setAction("com.youngmind.services.NotificationService");
+        startService(serviceIntent);*/
+
+        //send push notification token to server as soon as the user logs in
         new InitialTokenPush(getApplicationContext()).pushTokenToServer(NOTIFICATION_API);
 
     }

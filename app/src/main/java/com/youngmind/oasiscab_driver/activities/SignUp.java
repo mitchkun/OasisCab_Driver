@@ -52,11 +52,11 @@ public class SignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.test_create_account);
 
 
 //        Ask permission to read data(images) external of the app
-        handlePermission();
+//        handlePermission();
     }
 
     @Override

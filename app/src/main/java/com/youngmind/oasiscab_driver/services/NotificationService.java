@@ -1,4 +1,4 @@
-package com.youngmind.oasiscab_driver.notifications;
+package com.youngmind.oasiscab_driver.services;
 
 import android.app.Notification;
 import android.util.Log;
@@ -14,6 +14,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.youngmind.oasiscab_driver.Config;
 import com.youngmind.oasiscab_driver.R;
 import com.youngmind.oasiscab_driver.activities.RideRequest;
 import com.youngmind.oasiscab_driver.http.RQ;
@@ -33,6 +34,7 @@ public class NotificationService extends FirebaseMessagingService {
 
     public NotificationService() {
 
+        Log.d(TAG, "Notification service started");
     }
 
     @Override
@@ -89,8 +91,20 @@ public class NotificationService extends FirebaseMessagingService {
 
     private void sendRegistrationToServer(String token) {
 
-        //send token
-        makePostRequest(link, token);
+        //only post the token if the user_id has been
+        //obtained, that is after a successful login
+
+        String user_id = Config.uniqueID;
+        if (user_id == null)
+            Log.e(TAG, "user_id not found, yet!");
+        else {
+            //send token
+            try {
+                makePostRequest(link, token, user_id);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void displayNotification(String title, String message){
@@ -107,7 +121,7 @@ public class NotificationService extends FirebaseMessagingService {
                 .build();
     }
 
-    private void makePostRequest(String url, final String token){
+    private void makePostRequest(String url, final String token, final String user_id) throws Exception{
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
@@ -127,7 +141,7 @@ public class NotificationService extends FirebaseMessagingService {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String>  params = new HashMap<String, String>();
-                params.put("user_id", "hama");
+                params.put("user_id", user_id);
                 params.put("token", token);
 
                 return params;
