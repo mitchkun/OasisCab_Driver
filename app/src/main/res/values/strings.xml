@@ -73,6 +73,11 @@
     <string name="accept_string">Accept</string>
     <string name="decline_string">Decline</string>
 
+    <!-- Notification Channel Strings -->
+    <string name="channel_id">Place Chaneel ID here</string>
+    <string name="channel_name">Place Chaneel name here</string>
+    <string name="channel_description">Place Chaneel Descr here</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_your_customers">YourCustomers</string>

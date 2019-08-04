@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/oasis_cab"
+    android:background="@color/design_default_color_primary"
     tools:context="com.youngmind.oasiscab_driver.activities.AgreeTerms">
 
     <ImageView
@@ -42,7 +42,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="@string/terms_and_conditions_title_string"
-                android:textColor="@color/black"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -54,7 +54,7 @@
                 android:layout_marginTop="10dp"
                 android:maxLines="7"
                 android:text="@string/terms_and_conditions_string"
-                android:textColor="@color/black"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
                 android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>
@@ -67,7 +67,7 @@
         android:layout_below="@id/terms_and_conditions_box"
         android:layout_centerHorizontal="true"
         android:text="@string/i_agree_string"
-        android:textColor="@color/black"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="16sp" />
 
     <Button
@@ -76,8 +76,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="60dp"
-        android:background="@drawable/button_oasis_orange"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/button_oasis"
         android:text="@string/sign_up_string"
         android:textColor="@color/white"
         android:textSize="16sp" />

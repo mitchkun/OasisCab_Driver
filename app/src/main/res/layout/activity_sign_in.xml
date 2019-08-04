@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/oasis_cab"
+    android:background="#524FA1"
     tools:context="com.youngmind.oasiscab_driver.activities.SignIn">
 
     <ImageView
@@ -26,7 +26,7 @@
         android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
         android:backgroundTint="@color/black"
-        android:drawableLeft="@drawable/ic_phone_call"
+        android:drawableLeft="@drawable/ic_name"
         android:gravity="center"
         android:hint="@string/email_address_hint_string"
         android:inputType="textEmailAddress"
